@@ -1,20 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Blogslist from "./Blogslist";
+import useFetch from "./useFetch";
 
 const Home = () => {
 
-
-    // id should be unique for each item. 
-    const[blogs, setBlogs] = useState([
-        {title: "My new website", body: "Lorem ipsum...", author: "Mario", id: 1},
-        {title: "How to build your first react project", body: "Lorem ipsum...", author: "Luigi", id: 2},
-        {title: "Getting an A in your physics test!", body: "Lorem ipsum...", author: "David", id: 3},
-    ]);
-
+    const{data: blogs, isPending, error} = useFetch("http://localhost:8000/blogs");    
 
     return ( 
     <div className="home">
-        <Blogslist blogs={blogs} title={"All Blogs!"}/>
+        {error && <div>{error}</div>}
+        {isPending && <div>Loading...</div>}
+        {blogs && <Blogslist blogs={blogs} title={"All Blogs!"} />}
     </div>    
     );
 }

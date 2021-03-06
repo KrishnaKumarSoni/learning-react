@@ -1,0 +1,17 @@
+{
+    "blogs":[
+
+        {
+            "title": "My  first blog",
+            "body": "This is the content of my first blog",
+            "author": "Mario",
+            "id": 1
+        },
+        {
+            "title": "How to cook mashed potato",
+            "body": "This is how to cook mashed potato from start to finish in 10 minutes! To start with, you need...",
+            "author": "Luigi",
+            "id": 2
+        }
+    ]
+}

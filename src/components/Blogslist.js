@@ -1,6 +1,4 @@
 const Blogslist = ({blogs, title}) => {
-    
-
     return ( 
         <div className="blogs-list">
             <h2>{title}</h2>
