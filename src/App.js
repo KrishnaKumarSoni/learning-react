@@ -3,6 +3,7 @@ import Home from "./components/Home.js";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Create from "./components/Create.js";
 import BlogDetails from "./components/BlogDetails.js";
+import NotFound from "./components/NotFound.js";
 
 function App() {
   return (
@@ -17,8 +18,11 @@ function App() {
               <Route exact path="/create">
                 <Create />
               </Route>
-              <Route exact path="/blog/:id">
+              <Route exact path="/blogs/:id">
                 <BlogDetails />
+              </Route>
+              <Route path="*">
+                <NotFound />
               </Route>                             
             </Switch>
           </div>
